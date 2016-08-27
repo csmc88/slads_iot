@@ -33,15 +33,15 @@ curl -L -s https://raw.githubusercontent.com/SerDigital/OpenStack/master/script.
 '''
 
 
-sec_group_name = 'slads_web'
-if conn.search_security_groups(sec_group_name):
-    pass #print('Security group already exists. Skipping creation.')
-else:
-    #print('Creating security group.')
-    conn.create_security_group(sec_group_name, 'Network access for SLADS IoT application.')
-    conn.create_security_group_rule(sec_group_name, 80, 80, 'TCP')
-    conn.create_security_group_rule(sec_group_name, 5000, 5000, 'TCP')
-    conn.create_security_group_rule(sec_group_name, 9000, 9000, 'TCP')
+sec_group_name = 'iot_test'
+#if conn.search_security_groups(sec_group_name):
+#    pass #print('Security group already exists. Skipping creation.')
+#else:
+#    #print('Creating security group.')
+#    conn.create_security_group(sec_group_name, 'Network access for SLADS IoT application.')
+#    conn.create_security_group_rule(sec_group_name, 80, 80, 'TCP')
+#    conn.create_security_group_rule(sec_group_name, 5000, 5000, 'TCP')
+#    conn.create_security_group_rule(sec_group_name, 9000, 9000, 'TCP')
 
 print "\nServer 1 creation:"
 testing_instance = conn.create_server(wait=True, auto_ip=True,
