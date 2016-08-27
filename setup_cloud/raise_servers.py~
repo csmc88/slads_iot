@@ -1,0 +1,33 @@
+#!/usr/bin/python27
+
+from shade import *
+
+conn = openstack_cloud(cloud='osic-hackathon')
+
+server1_name = "slads_s1"
+server2_name = "slads_s2"
+
+servers = conn.list_servers()
+servers = [str(server.name) for server in servers]
+if server1_name in servers:
+	conn.delete_server(server1_name)
+
+if server2_name in servers:
+	conn.delete_server(server2_name)
+
+
+#images = conn.list_images()
+#image_name="ubuntu"
+#image_version="14"
+#for x in images:
+#    if image_name in str(x.name) and image_version in str(x.name):
+#        image_id = str(x.id)
+#print image_id
+
+# INSTANCE IMAGE AND FLAVOR
+image_id = "95576f28-afed-4b63-93b4-1d07928930da"
+flavor_name = "m1.tiny"
+
+
+
+
