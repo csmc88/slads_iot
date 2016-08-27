@@ -33,7 +33,7 @@ curl -L -s https://raw.githubusercontent.com/SerDigital/OpenStack/master/script.
 '''
 
 
-sec_group_name = 'iot_test'
+sec_group_name = 'iot'
 #if conn.search_security_groups(sec_group_name):
 #    pass #print('Security group already exists. Skipping creation.')
 #else:
